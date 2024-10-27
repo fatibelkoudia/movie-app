@@ -1,0 +1,58 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ html,
+ body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Hide default scrollbars */
+ }
+ body {
+  line-height: 1.6;
+  overflow-y: scroll; /* Ensure vertical scrolling */
+ }
+ img {
+  max-width: 100%;
+  height: auto;
+ }
+ ul {
+  list-style: none;
+ }
+ a {
+  text-decoration: none;
+  color: inherit;
+ }
+ button {
+  background: none;
+  border: none;
+ cursor: pointer;
+}
+/* Custom scrollbar styling that overlays content */
+body {
+ position: relative;
+}
+body::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 8px; /* Width of the custom scrollbar */
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar {
+ width: 8px; /* Custom scrollbar width */
+}
+::-webkit-scrollbar-track {
+ background: transparent; /* Transparent track */
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent scrollbar */
+  border-radius: 10px;
+ }
+ ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* More visible on hover */
+ }
