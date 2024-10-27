@@ -1,10 +1,13 @@
 import AppRouter from "./Router";
+import { StyledEngineProvider } from "@mui/material";
 
 function App() {
   return (
-    <div>
-      <AppRouter />
-    </div>
+    <StyledEngineProvider injectFirst>
+      <div>
+        <AppRouter />
+      </div>
+    </StyledEngineProvider>
   );
 }
 export default App;
