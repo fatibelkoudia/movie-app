@@ -1,8 +1,11 @@
 import { Tab, Tabs } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useMatch, useNavigate } from "react-router-dom";
+import { i18nMap } from "../../i18n/map";
 
 export default function NavBar() {
+  const { t } = useTranslation();
   const isHomePage = !!useMatch("/");
   const isMoviesPage = !!useMatch("/movies/*");
 
@@ -30,17 +33,15 @@ export default function NavBar() {
     [navigate]
   );
   return (
-    <Tabs role="navigation" value={value} onChange={handleChange}>
+    <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
       <Tab
-        label="home"
+        label={t(i18nMap.nav.home)} // Translated label for "Home"
         component="a"
-        aria-current={isHomePage}
         onClick={(e) => goto(e, "/")}
       />
       <Tab
-        label="movies"
+        label={t(i18nMap.nav.movies)} // Translated label for "Movies"
         component="a"
-        aria-current={isMoviesPage}
         onClick={(e) => goto(e, "/movies")}
       />
     </Tabs>
